@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "berkaydalancikar",
+    "database": "todo-db",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "serve": "nodemon app.js",
+    "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js --name",
+    "db:migrate": "npx sequelize db:migrate"
+  },
+  "dependencies": {
+    "fastify": "^3.11.0",
+    "fastify-autoload": "^3.4.2",
+    "fastify-cors": "^5.2.0",
+    "nconf": "^0.11.2",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.5.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "sequelize-auto-migrations": "github:scimonster/sequelize-auto-migrations"
+  }
+}

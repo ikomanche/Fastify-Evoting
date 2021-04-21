@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: todo-db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: todo-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: berkaydalancikar
+    ports: 
+      - 5432:5432
+
+  app:
+    container_name: todo-api
+    build: .
+    depends_on:
+      - db
+    environment: 
+      - DATABASE_URL=postgres://postgres:berkaydalancikar@db:5432/todo-db
+      - NODE_ENV=development
+      - PORT=3000
+    ports:
+      - 3000:3000

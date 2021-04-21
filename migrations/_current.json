@@ -1,0 +1,88 @@
+{
+    "tables": {
+        "categories": {
+            "tableName": "categories",
+            "schema": {
+                "id": {
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "allowNull": false,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "allowNull": false,
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
+                }
+            },
+            "indexes": []
+        },
+        "tasks": {
+            "tableName": "tasks",
+            "schema": {
+                "id": {
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "allowNull": false,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "allowNull": false,
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
+                },
+                "categoryId": {
+                    "allowNull": false,
+                    "field": "categoryId",
+                    "references": {
+                        "model": "categories",
+                        "key": "id"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "CASCADE",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "students": {
+            "tableName": "students",
+            "schema": {
+                "studentid": {
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "allowNull": false,
+                    "field": "studentid",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "allowNull": false,
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
+                }
+            },
+            "indexes": []
+        },
+        "testtables": {
+            "tableName": "testtables",
+            "schema": {
+                "id": {
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "allowNull": false,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "allowNull": false,
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 1
+}
