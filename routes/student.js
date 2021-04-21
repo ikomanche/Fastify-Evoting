@@ -8,4 +8,5 @@ module.exports = async function (fastify) {
   //fastify.put('/categories/:id', studentController.updateCategory)
   fastify.get('/students/votedstudents',studentController.getVotedStudents)
   fastify.get('/csestudents',studentController.getCSEStudents)
+  fastify.post('/candidateApplication/:id',studentController.CandidateApplication)
 }
