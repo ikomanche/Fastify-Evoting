@@ -21,6 +21,14 @@ exports.getStudent = async (req, res) => {
 //   res.status(201).send(category)
 // }
 
+exports.CandidateApplication = async (req, res) => {
+  const candidateApplier = await db.candidateList.create({
+    studentID: parseInt(req.params.id),
+    description: req.body.description
+  })  
+  res.status(201).send(candidateApplier)
+}
+
 exports.deleteStudent = async (req, res) => {
   const student = await db.student.findOne({
     where: {
@@ -58,3 +66,5 @@ exports.getCSEStudents = async (req,res) => {
 //   category.update({ name: req.body.name || category.name })
 //   res.status(200).send(category)
 // }
+
+
