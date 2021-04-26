@@ -14,3 +14,4 @@ loadSettings({ appSettingsPath })
   .catch(err => {
     console.log(err)
   })
+//test for git
