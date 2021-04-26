@@ -21,9 +21,11 @@ const createServer = options => {
   })
 
   server.register(require('fastify-cors')),
-    {
-      cors: true
-    }
+  {
+    cors: true
+  }  
+
+  
 
   server.listen(3000, (err, addr) => {
     if (err) {
